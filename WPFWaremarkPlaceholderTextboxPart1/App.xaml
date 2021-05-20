@@ -1,9 +1,12 @@
-﻿<Application x:Class="WPFWaremarkPlaceholderTextboxPart1.App"
+﻿ <Application x:Class="WPFWaremarkPlaceholderTextboxPart1.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WPFWaremarkPlaceholderTextboxPart1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionaries/TextBoxDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
