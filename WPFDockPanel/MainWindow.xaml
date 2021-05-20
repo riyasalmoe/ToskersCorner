@@ -1,0 +1,20 @@
+﻿<Window x:Class="WPFDockPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDockPanel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel> <!--LastChildFill="False"-->
+            <Button DockPanel.Dock="Top">Button 1</Button>
+            <Button DockPanel.Dock="Left">Button 3</Button>
+            <Button DockPanel.Dock="Bottom">Button 2</Button>
+            <Button DockPanel.Dock="Right">Button 4</Button>
+            <Button>Button 5</Button> 
+            <!--button 5 takes up remaining space if LastChildFill propery not set to false-->
+            
+        </DockPanel>
+    </Grid>
+</Window>

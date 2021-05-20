@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPFEllipse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFEllipse"
+        mc:Ignorable="d"
+        Title="Ellipse" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Ellipse 
+            Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" 
+             Width="240" Height="240" 
+            StrokeThickness="5" Stroke="Red">
+            <!--Fill="Gray"-->
+            <Ellipse.Fill>
+                <!--Can use either of the below properties to fill the ellipse-->
+                <ImageBrush ImageSource="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/C_Sharp_wordmark.svg/240px-C_Sharp_wordmark.svg.png"/>
+                <!--<SolidColorBrush Color="Blue"/>-->
+            </Ellipse.Fill>
+        </Ellipse>
+    </Grid>
+</Window>
