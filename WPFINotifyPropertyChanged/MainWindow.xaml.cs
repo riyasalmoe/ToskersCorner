@@ -12,22 +12,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFBegginnerModels.Models;
+using WPFINotifyPropertyChanged.ViewModels;
 
-namespace WPFBegginnerModels
+namespace WPFINotifyPropertyChanged
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel _main = new MainViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
-            MyModelObject myButton1DataContext = new MyModelObject() { Name = "I'm Button 01" };
-            MyModelObject myButton2DataContext = new MyModelObject() { Name = "I'm Button 02" };
-            Button1.Content = myButton1DataContext.Name;
-            Button2.Content = myButton2DataContext.Name;
+            DataContext = _main;
+        }
+
+        private void RedButton_Click(object sender, RoutedEventArgs e)
+        {
+            _main.SetBackground(Brushes.Red);
+        }
+
+        private void BlueButton_Click(object sender, RoutedEventArgs e)
+        {
+            _main.SetBackground(Brushes.Blue);
+        }
+
+        private void GreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            _main.SetBackground(Brushes.Green);
         }
     }
 }
