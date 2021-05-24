@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Width="250">
+            <TextBlock>Messages</TextBlock>
+            <ListView 
+                x:Name="comboMessages"
+                ItemsSource="{Binding MyMessages}"/>
+            <Button 
+                Command="{Binding MessageBoxCommand}"
+                CommandParameter="{Binding ElementName=comboMessages,Path=SelectedItem}">
+                MessageBox
+            </Button>
+            <Button Command="{Binding ConsoleLogCommand}"
+                    CommandParameter="{Binding ElementName=comboMessages,Path=SelectedItem}">
+                Console log
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

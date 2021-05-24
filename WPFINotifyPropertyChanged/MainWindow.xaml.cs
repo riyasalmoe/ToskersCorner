@@ -21,12 +21,13 @@ namespace WPFINotifyPropertyChanged
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel _main = new MainViewModel();
+        readonly MainViewModel _main = new MainViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = _main;
+            _main.SetBackground(Brushes.LightBlue);
         }
 
         private void RedButton_Click(object sender, RoutedEventArgs e)

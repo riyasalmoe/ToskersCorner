@@ -9,13 +9,26 @@
     <Grid Margin="10" Background="{Binding Background.Color}">
         <DockPanel LastChildFill="False" Margin="10">
             <StackPanel Width="150" DockPanel.Dock="Top" Margin="10">
-                <TextBlock Text="{Binding Person.Name, StringFormat=Welcome {0}}" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Person.Name, 
+                    StringFormat=Welcome {0}}" 
+                           HorizontalAlignment="Center"
+                           Foreground="White"/>
                 <TextBox Text="{Binding Person.Name,
                                 Mode=OneWayToSource, 
                                 UpdateSourceTrigger=PropertyChanged}"/>
                 <Button Content="Submit"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+            <Grid DockPanel.Dock="Top">
+                <StackPanel Width="200" Margin="50">
+                    <Label Content="TwoWayMode with trigger update propertychanged"/>
+                    <TextBox x:Name="Text1" Text="{Binding Person.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="Binding only to Text 1 with trigger update properychanged"/>
+                    <TextBox x:Name="Text2" Text="{Binding ElementName=Text1,Path=Text,UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        DockPanel.Dock="Bottom">
                 <Button Margin="5" x:Name="RedButton" 
                         Background="White" 
                         Foreground="Red" 
